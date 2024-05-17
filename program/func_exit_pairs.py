@@ -3,6 +3,7 @@ from func_utils import format_number
 from func_public import get_candles_recent
 from func_cointegration import calculate_zscore
 from func_private import place_market_order
+from func_messaging import send_message
 import json
 import time
 
@@ -135,9 +136,8 @@ def manage_trade_exits(client):
     # Trigger is_close
     ###
 
-    # Close positions if triggered
-    if is_close:
-
+    # Close positions if triggered    
+    if is_close:    
       # Determine side - m1
       side_m1 = "SELL"
       if position_side_m1 == "SELL":
@@ -195,7 +195,13 @@ def manage_trade_exits(client):
         time.sleep(2)
         print(close_order_m2["order"]["id"])
         print(">>> Closing <<<")
-
+        try:
+          send_message(f'>>> Closing <<< - BASE: {position_market_m1} QUOTE: {position_market_m2} - OrderID: {close_order_m2["order"]["id"]}')
+        except Exception as e:
+          print(f"Couldn't Send Message - {e}")
+        
+        
+        time.sleep(1)
       except Exception as e:
         print(f"Exit failed for {position_market_m1} with {position_market_m2}")
         print(f"Exception Error: {e}")

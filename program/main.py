@@ -21,14 +21,13 @@ from constants import (
   
 # MAIN FUNCTION
 if __name__ == "__main__":
-  
+   
   # Message on start
-  # send_message("Bot launch successful")
   print("Bot launch successful")
   # Connect to client
   try:
     print("Connecting to Client...")
-    client = connect_dydx()   
+    client = connect_dydx()      
     # print("Connecting to Mainnet...")
     # public_client = connect_public_dydx()
     # print(dir(public_client))
@@ -75,6 +74,9 @@ if __name__ == "__main__":
       
  
   # Run as always on
+  status = send_message(f'BOT has STARTED - {time.strftime("%H:%M:%S",time.localtime())}')
+  print(f"Messenger: {status}")
+  
   while RUN_BOT:
 
     # Place trades for opening positions
@@ -84,7 +86,7 @@ if __name__ == "__main__":
         manage_trade_exits(client)
       except Exception as e:
         print("Main Loop - Error managing exiting positions: ", e)
-        # send_message(f"Error managing exiting positions {e}")
+        send_message(f"Error managing exiting positions {e}")
         exit(1)
 
     # Place trades for opening positions
@@ -94,9 +96,12 @@ if __name__ == "__main__":
         open_positions(client)
       except Exception as e:
         print("Main Loop - Error trading pairs: ", e)
-        # send_message(f"Error opening trades {e}")
+        send_message(f"Error opening trades {e}")
         exit(1)
         
-    time.sleep(1)
-                
+    time.sleep(2)
+
+
+status = send_message(f'BOT has STOPPED - {time.strftime("%H:%M:%S",time.localtime())}')
+print(f"Messenger: {status}")       
  

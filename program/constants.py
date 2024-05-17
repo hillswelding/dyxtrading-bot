@@ -6,7 +6,7 @@ from decouple import config
 MODE = "DEVELOPMENT"
 
 # Close all open positions and orders
-ABORT_ALL_POSITIONS = False
+ABORT_ALL_POSITIONS = True
 
 # Find Cointegrated Pairs
 FIND_COINTEGRATED = False
@@ -18,7 +18,7 @@ RUN_BOT = True
 MANAGE_EXITS = True
 
 # Place Trades
-PLACE_TRADES = False
+PLACE_TRADES = True
 
 
 # Resolution
@@ -87,3 +87,11 @@ HOST = API_HOST_MAINNET if MODE == "PRODUCTION" else API_HOST_SEPOLIA
 HTTP_PROVIDER_MAINNET = "https://mainnet.infura.io/v3/42ef9289b2294414972f42b0cfdfd0d3"#"https://eth-mainnet.g.alchemy.com/v2/C38A2E03uos12XB0zaw4OhkHEZm5Io8T"
 HTTP_PROVIDER_TESTNET = "https://eth-sepolia.g.alchemy.com/v2/IVBi_rOLgQ7PRgiquRQn5Ywv1DaP0VQY"
 HTTP_PROVIDER = HTTP_PROVIDER_MAINNET if MODE == "PRODUCTION" else HTTP_PROVIDER_TESTNET
+
+
+TELEGRAM_TOKEN = '7179537225:AAGAPVfLLqSo1kbLmGvGqbMyiwfCsDO0LwQ'
+TELEGRAM_CHAT_ID = '7096514014'
+
+"""
+{"ok":true,"result":{"message_id":5,"from":{"id":7179537225,"is_bot":true,"first_name":"DyDxBot","username":"martys_dydx_bot"},"chat":{"id":7096514014,"first_name":"Marty","type":"private"},"date":1715915071,"text":"HELLO FROM MARTY"}}
+"""

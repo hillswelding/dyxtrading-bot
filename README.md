@@ -52,3 +52,6 @@ https://github.com/hillswelding/dyxtrading-bot
 DYDX API DOCS
 
 https://dydxprotocol.github.io/v3-teacher/?python#general
+
+This Version Works
+https://pypi.org/project/dydx-v3-python/
