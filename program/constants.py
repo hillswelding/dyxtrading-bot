@@ -89,9 +89,3 @@ HTTP_PROVIDER_TESTNET = "https://eth-sepolia.g.alchemy.com/v2/IVBi_rOLgQ7PRgiquR
 HTTP_PROVIDER = HTTP_PROVIDER_MAINNET if MODE == "PRODUCTION" else HTTP_PROVIDER_TESTNET
 
 
-TELEGRAM_TOKEN = '7179537225:AAGAPVfLLqSo1kbLmGvGqbMyiwfCsDO0LwQ'
-TELEGRAM_CHAT_ID = '7096514014'
-
-"""
-{"ok":true,"result":{"message_id":5,"from":{"id":7179537225,"is_bot":true,"first_name":"DyDxBot","username":"martys_dydx_bot"},"chat":{"id":7096514014,"first_name":"Marty","type":"private"},"date":1715915071,"text":"HELLO FROM MARTY"}}
-"""
