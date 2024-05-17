@@ -96,7 +96,7 @@ if __name__ == "__main__":
         open_positions(client)
       except Exception as e:
         print("Main Loop - Error trading pairs: ", e)
-        send_message(f"Error opening trades {e}")
+        send_message(f"Error - Opening trading opportunities {e}")
         exit(1)
         
     time.sleep(2)

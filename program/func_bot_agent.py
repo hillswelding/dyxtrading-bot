@@ -194,7 +194,7 @@ class BotAgent:
           print(order_status_close_order)
 
           # Send Message
-          # send_message("Failed to execute. Code red. Error code: 100")
+          send_message(f'Failed to execute. Code red. Error code: 100 - {time.strftime("%H:%M:%S",time.localtime())}')
 
           # ABORT
           exit(1)
@@ -206,7 +206,7 @@ class BotAgent:
         print(order_status_close_order)
 
         # Send Message
-        # send_message("Failed to execute. Code red. Error code: 101")
+        send_message(f'Failed to execute. Code red. Error code: 101 - {time.strftime("%H:%M:%S",time.localtime())}')
 
         # ABORT
         exit(1)
